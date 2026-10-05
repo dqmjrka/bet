@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <!-- счетчик яндекс метрики -->
+    <!-- метрика яндекса -->
     <script type="text/javascript">
        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
        m[i].l=1*new Date();
@@ -22,7 +22,7 @@
     <title>Beton-pol - Производство и монтаж бетонных полов</title>
 
     <style>
-        /* сброс и базовые штуки */
+        /* сброс стилей */
         * {
             margin: 0;
             padding: 0;
@@ -30,7 +30,7 @@
             font-family: 'Arial', sans-serif;
         }
 
-        /* отступ для плавного скролла под фиксированную шапку */
+        /* отступ для скролла под шапку */
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 110px;
@@ -57,7 +57,7 @@
             padding: 0 15px;
         }
 
-        /* фиксированная шапка */
+        /* шапка */
         header {
             background-color: #fff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -69,7 +69,7 @@
         }
 
         .header-top {
-            padding: 10px 0;
+            padding: 12px 0;
             border-bottom: 1px solid #f0f0f0;
         }
 
@@ -111,7 +111,7 @@
             color: #e74c3c;
         }
 
-        /* меню */
+        /* верхнее меню */
         nav {
             background-color: #2c3e50;
         }
@@ -138,7 +138,7 @@
             background-color: #e74c3c;
         }
 
-        /* главный баннер */
+        /* первый экран баннера */
         .main-banner {
             background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://remstroyy.ru/upload/resize_cache/iblock/fcc/735_10000_0/fcc5087b02833835b34376958a6673d3.jpg');
             background-size: cover;
@@ -163,13 +163,14 @@
 
         .btn {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 14px 34px;
             background-color: #e74c3c;
             color: #fff;
             border-radius: 4px;
             font-weight: bold;
             border: none;
             cursor: pointer;
+            font-size: 16px;
             transition: background-color 0.25s, transform 0.15s;
         }
 
@@ -181,7 +182,7 @@
             transform: scale(0.98);
         }
 
-        /* секции и заголовки */
+        /* заголовки блоков */
         .section-title {
             text-align: center;
             font-size: 28px;
@@ -199,38 +200,24 @@
             margin: 10px auto 0;
         }
 
-        /* о компании */
+        /* блок о компании */
         .about {
             padding: 70px 0;
         }
 
-        .about-content {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
-
         .about-text {
-            flex: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #444;
         }
 
         .about-text p {
-            margin-bottom: 15px;
-            font-size: 16px;
+            margin-bottom: 18px;
         }
 
-        .about-image {
-            flex: 1;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* услуги */
+        /* карточки услуг */
         .services {
             padding: 70px 0;
             background-color: #f9f9f9;
@@ -274,14 +261,14 @@
         }
 
         .service-content {
-            padding: 18px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
         .service-title {
-            font-size: 18px;
+            font-size: 19px;
             margin-bottom: 10px;
             color: #2c3e50;
         }
@@ -289,18 +276,7 @@
         .service-content p {
             font-size: 14px;
             color: #666;
-            margin-bottom: 15px;
-            flex-grow: 1;
-        }
-
-        .service-content .card-btn {
-            font-size: 14px;
-            color: #e74c3c;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            cursor: pointer;
+            line-height: 1.5;
         }
 
         /* проекты */
@@ -322,29 +298,30 @@
         }
 
         .project-img {
-            height: 190px;
+            height: 200px;
             width: 100%;
             object-fit: cover;
         }
 
         .project-info {
-            padding: 15px;
+            padding: 18px;
         }
 
         .project-info h4 {
             color: #2c3e50;
-            margin-bottom: 5px;
+            font-size: 18px;
+            margin-bottom: 6px;
         }
 
         .project-info span {
-            font-size: 13px;
+            font-size: 14px;
             color: #777;
         }
 
         /* преимущества */
         .advantages {
-            padding: 60px 0;
-            background-color: #fff;
+            padding: 70px 0;
+            background-color: #f9f9f9;
         }
 
         .advantages-list {
@@ -356,8 +333,9 @@
 
         .advantage-item {
             padding: 25px 15px;
-            background-color: #f9f9f9;
+            background-color: #fff;
             border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
             transition: all 0.3s;
         }
 
@@ -377,73 +355,43 @@
             color: #fff;
         }
 
-        /* контакты и форма заявки */
+        /* контакты внизу */
         .contact-section {
             padding: 70px 0;
             background-color: #2c3e50;
             color: #fff;
+            text-align: center;
         }
 
         .contact-section .section-title {
             color: #fff;
         }
 
-        .contact-container {
-            display: flex;
-            gap: 40px;
+        .contact-box {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .contact-info {
-            flex: 1;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 12px;
-            font-size: 15px;
+        .contact-box p {
+            margin-bottom: 16px;
+            font-size: 17px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            gap: 12px;
         }
 
-        .contact-info a:hover {
+        .contact-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-box a:hover {
             color: #e74c3c;
             text-decoration: underline;
-        }
-
-        .contact-form {
-            flex: 1.2;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 25px;
-            border-radius: 8px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1px solid #415b76;
-            border-radius: 4px;
-            font-size: 15px;
-            background: #fff;
-            color: #333;
-            outline: none;
-        }
-
-        .form-control:focus {
-            border-color: #e74c3c;
-        }
-
-        textarea.form-control {
-            height: 110px;
-            resize: vertical;
         }
 
         /* подвал */
@@ -494,7 +442,7 @@
             color: #8c9ba5;
         }
 
-        /* модальные окна (qr и форма консультации) */
+        /* модалка с qr кодом */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -517,13 +465,13 @@
             background: #fff;
             color: #333;
             width: 100%;
-            max-width: 420px;
+            max-width: 400px;
             border-radius: 10px;
             padding: 25px;
             text-align: center;
             position: relative;
             box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-            animation: modalFadeIn 0.25s ease-out;
+            animation: modalFadeIn 0.2s ease-out;
         }
 
         @keyframes modalFadeIn {
@@ -549,7 +497,7 @@
 
         .modal-title {
             font-size: 20px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: #2c3e50;
         }
 
@@ -575,7 +523,7 @@
         }
 
         .phone-display {
-            font-size: 18px;
+            font-size: 19px;
             font-weight: bold;
             color: #2c3e50;
             margin-bottom: 15px;
@@ -597,7 +545,7 @@
             background: #e4e7eb;
         }
 
-        /* адаптив под планшеты и мобилки */
+        /* адаптив под планшет и телефон */
         @media (max-width: 992px) {
             html {
                 scroll-padding-top: 140px;
@@ -611,9 +559,6 @@
             .advantages-list {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .contact-container, .about-content {
-                flex-direction: column;
-            }
         }
 
         @media (max-width: 768px) {
@@ -621,7 +566,7 @@
                 scroll-padding-top: 70px;
             }
             nav {
-                display: none; /* скрываем меню на телефонах */
+                display: none;
             }
             .main-banner {
                 padding: 130px 0 60px;
@@ -653,7 +598,7 @@
 </head>
 <body>
 
-    <!-- шапка -->
+    <!-- шапка сайта -->
     <header>
         <div class="header-top">
             <div class="container header-container">
@@ -673,7 +618,7 @@
             </div>
         </div>
 
-        <!-- навигация -->
+        <!-- ссылки на разделы -->
         <nav>
             <ul class="nav-list container">
                 <li class="nav-item"><a href="#home" class="nav-link">Главная</a></li>
@@ -685,33 +630,28 @@
         </nav>
     </header>
 
-    <!-- главный баннер -->
+    <!-- баннер с кнопкой звонка -->
     <section class="main-banner" id="home">
         <div class="container">
             <h1 class="banner-title">Промышленные бетонные полы от Beton-pol</h1>
             <p class="banner-text">Мы предлагаем полный комплекс услуг по устройству бетонных полов промышленного и коммерческого назначения с гарантией качества</p>
-            <button type="button" class="btn" id="hero-consult-btn">Заказать консультацию</button>
+            <a href="tel:+375291111404" class="btn phone-link">Заказать консультацию</a>
         </div>
     </section>
 
-    <!-- блок о компании -->
+    <!-- текст о компании без битой картинки -->
     <section class="about" id="about">
         <div class="container">
             <h2 class="section-title">О компании Beton-pol</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Компания Beton-pol - это команда профессионалов с многолетним опытом работы в сфере устройства бетонных полов. Мы работаем на рынке Беларуси с 2010 года и за это время реализовали более 500 успешных проектов.</p>
-                    <p>Наша специализация - промышленные бетонные полы для складов, производственных помещений, торговых центров и других объектов коммерческого назначения.</p>
-                    <p>Мы используем только качественные материалы и современное оборудование, что позволяет нам гарантировать долговечность и надежность ваших полов.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://remstroyy.ru/upload/resize_cache/iblock/fcc/735_10000_0/fcc5087b02833835b34376958a6673d3.jpg" alt="О компании Beton-pol">
-                </div>
+            <div class="about-text">
+                <p>Компания Beton-pol - это команда профессионалов с многолетним опытом работы в сфере устройства бетонных полов. Мы работаем на рынке Беларуси с 2010 года и за это время реализовали более 500 успешных проектов.</p>
+                <p>Наша специализация - промышленные бетонные полы для складов, производственных помещений, торговых центров и других объектов коммерческого назначения.</p>
+                <p>Мы используем только качественные материалы и современное оборудование, что позволяет нам гарантировать долговечность и надежность ваших полов.</p>
             </div>
         </div>
     </section>
 
-    <!-- услуги -->
+    <!-- список услуг -->
     <section class="services" id="services">
         <div class="container">
             <h2 class="section-title">Наши услуги</h2>
@@ -724,7 +664,6 @@
                     <div class="service-content">
                         <h3 class="service-title">Бетонные полы</h3>
                         <p>Устройство армированных бетонных полов для складов, ангаров и цехов с высокими нагрузками.</p>
-                        <span class="card-btn open-consult-trigger">Заказать расчёт →</span>
                     </div>
                 </div>
 
@@ -735,7 +674,6 @@
                     <div class="service-content">
                         <h3 class="service-title">Топпинг-полы</h3>
                         <p>Упрочнение верхнего слоя бетона кварцевым или корундовым топпингом против истирания и пыли.</p>
-                        <span class="card-btn open-consult-trigger">Заказать расчёт →</span>
                     </div>
                 </div>
 
@@ -746,7 +684,6 @@
                     <div class="service-content">
                         <h3 class="service-title">Полимерные покрытия</h3>
                         <p>Эпоксидные и полиуретановые наливные полы для фармацевтики, пищевых и химических зон.</p>
-                        <span class="card-btn open-consult-trigger">Заказать расчёт →</span>
                     </div>
                 </div>
 
@@ -757,7 +694,6 @@
                     <div class="service-content">
                         <h3 class="service-title">Ремонт полов</h3>
                         <p>Заделка сколов, трещин и деформационных швов, шлифовка, фрезерование и обеспыливание старого бетона.</p>
-                        <span class="card-btn open-consult-trigger">Заказать расчёт →</span>
                     </div>
                 </div>
 
@@ -765,7 +701,7 @@
         </div>
     </section>
 
-    <!-- проекты -->
+    <!-- примеры выполненных объектов -->
     <section class="projects" id="projects">
         <div class="container">
             <h2 class="section-title">Выполненные проекты</h2>
@@ -773,21 +709,21 @@
                 <div class="project-card">
                     <img src="https://images.prom.md/11573109_w640_h640_betonnye-promyshlennye-poly.jpg" class="project-img" alt="Складской комплекс">
                     <div class="project-info">
-                        <h4>Логистический хаб, 4 800 м²</h4>
-                        <span>Топпинг корундовый, нагрузка до 8 т/м²</span>
+                        <h4>Логистический хаб</h4>
+                        <span>Топпинг корундовый</span>
                     </div>
                 </div>
                 <div class="project-card">
                     <img src="https://remstroyy.ru/upload/resize_cache/iblock/fcc/735_10000_0/fcc5087b02833835b34376958a6673d3.jpg" class="project-img" alt="Производственный цех">
                     <div class="project-info">
-                        <h4>Производственный цех, 2 200 м²</h4>
+                        <h4>Производственный цех</h4>
                         <span>Полимерное химстойкое покрытие</span>
                     </div>
                 </div>
                 <div class="project-card">
                     <img src="https://images.prom.md/11573109_w640_h640_betonnye-promyshlennye-poly.jpg" class="project-img" alt="Паркинг">
                     <div class="project-info">
-                        <h4>Подземный паркинг, 3 100 м²</h4>
+                        <h4>Подземный паркинг</h4>
                         <span>Шлифованный бетон с обеспыливанием</span>
                     </div>
                 </div>
@@ -795,7 +731,7 @@
         </div>
     </section>
 
-    <!-- преимущества -->
+    <!-- плюсы работы с нами -->
     <section class="advantages">
         <div class="container">
             <h2 class="section-title">Почему выбирают нас</h2>
@@ -824,50 +760,32 @@
         </div>
     </section>
 
-    <!-- контакты и форма заявки -->
+    <!-- контакты и график работы -->
     <section class="contact-section" id="contacts">
         <div class="container">
             <h2 class="section-title">Контакты</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Свяжитесь с нами</h3>
-                    <p>
-                        <span>📍</span>
-                        Беларусь, г. Минск
-                    </p>
-                    <p>
-                        <span>📞</span>
-                        <a href="tel:+375291111404" class="phone-link">+375 (29) 1111-404</a>
-                    </p>
-                    <p>
-                        <span>✉️</span>
-                        <a href="mailto:beton-poll@mail.ru">beton-poll@mail.ru</a>
-                    </p>
-                    <p>
-                        <span>⏰</span>
-                        Пн-Пт: 8:00 - 20:00, Сб: 9:00 - 17:00
-                    </p>
-                </div>
-
-                <div class="contact-form">
-                    <form id="main-contact-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="name" placeholder="Ваше имя" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" class="form-control" name="phone" placeholder="Ваш телефон (+375 ...)" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" name="comment" placeholder="Укажите площадь и назначение помещения"></textarea>
-                        </div>
-                        <button type="submit" class="btn" style="width: 100%;">Отправить заявку</button>
-                    </form>
-                </div>
+            <div class="contact-box">
+                <p>
+                    <span>📍</span>
+                    Беларусь, г. Минск
+                </p>
+                <p>
+                    <span>📞</span>
+                    <a href="tel:+375291111404" class="phone-link">+375 (29) 1111-404</a>
+                </p>
+                <p>
+                    <span>✉️</span>
+                    <a href="mailto:beton-poll@mail.ru">beton-poll@mail.ru</a>
+                </p>
+                <p>
+                    <span>⏰</span>
+                    Пн-Пт: 8:00 - 20:00
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- подвал сайта -->
+    <!-- подвал с копирайтом -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -899,14 +817,14 @@
         </div>
     </footer>
 
-    <!-- модалка с qr кодом для звонка с компьютера -->
+    <!-- модальное окно с qr кодом для компьютеров -->
     <div class="modal-overlay" id="qr-modal">
         <div class="modal-box">
             <button type="button" class="modal-close" aria-label="Закрыть">&times;</button>
             <h3 class="modal-title">Звонок в Beton-pol</h3>
             <p class="modal-desc">Наведите камеру смартфона на QR-код для быстрого набора номера:</p>
             <div class="qr-wrapper">
-                <img id="qr-code-img" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=tel%3A%2B375291111404" alt="QR-код для звонка">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=tel%3A%2B375291111404" alt="QR-код для звонка">
             </div>
             <a href="tel:+375291111404" class="phone-display">+375 (29) 1111-404</a>
             <div>
@@ -915,43 +833,18 @@
         </div>
     </div>
 
-    <!-- модалка формы заявки на консультацию -->
-    <div class="modal-overlay" id="consult-modal">
-        <div class="modal-box" style="text-align: left;">
-            <button type="button" class="modal-close" aria-label="Закрыть">&times;</button>
-            <h3 class="modal-title" style="text-align: center;">Заказать консультацию</h3>
-            <p class="modal-desc" style="text-align: center;">Оставьте телефон, перезвоним в течение 15 минут</p>
-            <form id="modal-consult-form">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="name" placeholder="Ваше имя" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" class="form-control" name="phone" placeholder="Телефон (+375 ...)" required>
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" name="comment" placeholder="Площадь пола или вопрос"></textarea>
-                </div>
-                <button type="submit" class="btn" style="width: 100%;">Заказать звонок</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- скрипты логики -->
+    <!-- скрипт для qr кода -->
     <script>
-        // проверяем, зашли с компа или с мобильного
+        // проверяем, зашли с пк или с телефона
         function checkIsDesktop() {
-            const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            return !isMobileDevice && window.innerWidth > 768;
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            return !isMobile && window.innerWidth > 768;
         }
 
-        // элементы модалки qr
         const qrModal = document.getElementById('qr-modal');
-        const consultModal = document.getElementById('consult-modal');
         const phoneLinks = document.querySelectorAll('.phone-link');
-        const heroConsultBtn = document.getElementById('hero-consult-btn');
-        const consultTriggers = document.querySelectorAll('.open-consult-trigger');
 
-        // перехватываем клик по телефону на компе и показываем qr
+        // если кликнули на телефон с компа — открываем qr, если с телефона — сработает обычный вызов
         phoneLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 if (checkIsDesktop()) {
@@ -961,71 +854,42 @@
             });
         });
 
-        // копирование номера в буфер
+        // копирование номера телефона по кнопке
         const copyBtn = document.getElementById('copy-phone-btn');
         if (copyBtn) {
             copyBtn.addEventListener('click', function() {
                 navigator.clipboard.writeText('+375291111404').then(() => {
-                    const oldText = this.innerText;
+                    const original = this.innerText;
                     this.innerText = 'Номер скопирован!';
                     setTimeout(() => {
-                        this.innerText = oldText;
+                        this.innerText = original;
                     }, 2000);
                 });
             });
         }
 
-        // открываем окно заявки при клике на консультацию
-        if (heroConsultBtn) {
-            heroConsultBtn.addEventListener('click', () => {
-                consultModal.classList.add('active');
-            });
-        }
-
-        consultTriggers.forEach(btn => {
-            btn.addEventListener('click', () => {
-                consultModal.classList.add('active');
-            });
-        });
-
-        // закрытие окон по крестику и по клику на фон
+        // закрытие по крестику
         document.querySelectorAll('.modal-close').forEach(closeBtn => {
             closeBtn.addEventListener('click', function() {
                 this.closest('.modal-overlay').classList.remove('active');
             });
         });
 
-        [qrModal, consultModal].forEach(modal => {
-            modal.addEventListener('click', function(e) {
+        // закрытие кликом по фону
+        if (qrModal) {
+            qrModal.addEventListener('click', function(e) {
                 if (e.target === this) {
                     this.classList.remove('active');
                 }
             });
-        });
-
-        // закрытие по esc
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                qrModal.classList.remove('active');
-                consultModal.classList.remove('active');
-            }
-        });
-
-        // обработка отправки форм заявки
-        function handleFormSubmit(form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
-                this.reset();
-                consultModal.classList.remove('active');
-            });
         }
 
-        const mainForm = document.getElementById('main-contact-form');
-        const modalForm = document.getElementById('modal-consult-form');
-
-        if (mainForm) handleFormSubmit(mainForm);
-        if (modalForm) handleFormSubmit(modalForm);
+        // закрытие через кнопку esc
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && qrModal) {
+                qrModal.classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>
