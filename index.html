@@ -1,139 +1,158 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <!-- счетчик яндекс метрики -->
+    <script type="text/javascript">
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(102141357, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/102141357" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+       ym(102141357, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/102141357" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beton-pol - Производство и монтаж бетонных полов</title>
+
     <style>
-        /* Общие стили */
+        /* сброс и базовые штуки */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
-        
+
+        /* отступ для плавного скролла под фиксированную шапку */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px;
+        }
+
         body {
             color: #333;
             line-height: 1.6;
+            background-color: #fff;
         }
-        
+
         a {
             text-decoration: none;
             color: inherit;
         }
-        
+
         ul {
             list-style: none;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
         }
-        
-        /* Шапка */
+
+        /* фиксированная шапка */
         header {
             background-color: #fff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 10px 0;
         }
-        
+
+        .header-top {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
         }
-        
+
         .logo {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
             color: #2c3e50;
             white-space: nowrap;
         }
-        
+
         .logo span {
             color: #e74c3c;
         }
-        
+
         .header-contacts {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             align-items: center;
             flex-wrap: wrap;
             justify-content: flex-end;
         }
-        
+
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
             font-size: 14px;
             white-space: nowrap;
         }
-        
-        /* Навигация */
+
+        .contact-item a:hover {
+            color: #e74c3c;
+        }
+
+        /* меню */
         nav {
             background-color: #2c3e50;
         }
-        
+
         .nav-list {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
         }
-        
+
         .nav-item {
             position: relative;
         }
-        
+
         .nav-link {
             color: #fff;
-            padding: 15px 20px;
+            padding: 14px 20px;
             display: block;
-            transition: background-color 0.3s;
+            font-size: 15px;
+            transition: background-color 0.25s;
         }
-        
+
         .nav-link:hover {
             background-color: #e74c3c;
         }
-        
-        /* Главный баннер */
+
+        /* главный баннер */
         .main-banner {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://remstroyy.ru/upload/resize_cache/iblock/fcc/735_10000_0/fcc5087b02833835b34376958a6673d3.jpg');
+            background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://remstroyy.ru/upload/resize_cache/iblock/fcc/735_10000_0/fcc5087b02833835b34376958a6673d3.jpg');
             background-size: cover;
             background-position: center;
             color: #fff;
             text-align: center;
-            padding: 150px 0 100px;
+            padding: 180px 0 100px;
         }
-        
+
         .banner-title {
-            font-size: 32px;
+            font-size: 34px;
             margin-bottom: 20px;
         }
-        
+
         .banner-text {
             font-size: 18px;
             margin-bottom: 30px;
@@ -141,7 +160,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .btn {
             display: inline-block;
             padding: 12px 30px;
@@ -149,364 +168,534 @@
             color: #fff;
             border-radius: 4px;
             font-weight: bold;
-            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.25s, transform 0.15s;
         }
-        
+
         .btn:hover {
             background-color: #c0392b;
         }
-        
-        /* О компании */
-        .about {
-            padding: 60px 0;
+
+        .btn:active {
+            transform: scale(0.98);
         }
-        
+
+        /* секции и заголовки */
         .section-title {
             text-align: center;
             font-size: 28px;
             margin-bottom: 40px;
             color: #2c3e50;
+            position: relative;
         }
-        
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #e74c3c;
+            margin: 10px auto 0;
+        }
+
+        /* о компании */
+        .about {
+            padding: 70px 0;
+        }
+
         .about-content {
             display: flex;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
         }
-        
+
         .about-text {
             flex: 1;
         }
-        
+
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
         .about-image {
             flex: 1;
         }
-        
+
         .about-image img {
             width: 100%;
+            height: auto;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
-        /* Услуги */
+
+        /* услуги */
         .services {
-            padding: 60px 0;
+            padding: 70px 0;
             background-color: #f9f9f9;
         }
-        
+
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
-        
+
         .service-card {
             background-color: #fff;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
         }
-        
+
         .service-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        
+
         .service-image {
             height: 180px;
             overflow: hidden;
         }
-        
+
         .service-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 0.4s;
         }
-        
+
         .service-card:hover .service-image img {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
-        
+
         .service-content {
-            padding: 15px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
-        
+
         .service-title {
             font-size: 18px;
             margin-bottom: 10px;
             color: #2c3e50;
         }
-        
-        /* Преимущества */
+
+        .service-content p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .service-content .card-btn {
+            font-size: 14px;
+            color: #e74c3c;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        /* проекты */
+        .projects {
+            padding: 70px 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .project-img {
+            height: 190px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 15px;
+        }
+
+        .project-info h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .project-info span {
+            font-size: 13px;
+            color: #777;
+        }
+
+        /* преимущества */
         .advantages {
             padding: 60px 0;
+            background-color: #fff;
         }
-        
+
         .advantages-list {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             text-align: center;
         }
-        
+
         .advantage-item {
-            padding: 20px 15px;
+            padding: 25px 15px;
             background-color: #f9f9f9;
             border-radius: 8px;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
         }
-        
+
         .advantage-item:hover {
             background-color: #2c3e50;
             color: #fff;
+            transform: translateY(-5px);
         }
-        
+
         .advantage-icon {
-            font-size: 32px;
-            margin-bottom: 10px;
+            font-size: 34px;
+            margin-bottom: 12px;
             color: #e74c3c;
         }
-        
+
         .advantage-item:hover .advantage-icon {
             color: #fff;
         }
-        
-        /* Контакты */
+
+        /* контакты и форма заявки */
         .contact-section {
-            padding: 60px 0;
+            padding: 70px 0;
             background-color: #2c3e50;
             color: #fff;
         }
-        
+
+        .contact-section .section-title {
+            color: #fff;
+        }
+
         .contact-container {
             display: flex;
-            gap: 30px;
+            gap: 40px;
         }
-        
+
         .contact-info {
             flex: 1;
         }
-        
-        .contact-form {
-            flex: 1;
+
+        .contact-info h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
         }
-        
+
+        .contact-info p {
+            margin-bottom: 12px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info a:hover {
+            color: #e74c3c;
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            flex: 1.2;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 8px;
+        }
+
         .form-group {
             margin-bottom: 15px;
         }
-        
+
         .form-control {
             width: 100%;
-            padding: 10px;
-            border: none;
+            padding: 12px 14px;
+            border: 1px solid #415b76;
             border-radius: 4px;
+            font-size: 15px;
+            background: #fff;
+            color: #333;
+            outline: none;
         }
-        
+
+        .form-control:focus {
+            border-color: #e74c3c;
+        }
+
         textarea.form-control {
-            height: 100px;
+            height: 110px;
             resize: vertical;
         }
-        
-        /* Подвал */
+
+        /* подвал */
         footer {
             background-color: #1a252f;
             color: #fff;
-            padding: 30px 0 15px;
+            padding: 40px 0 20px;
         }
-        
+
         .footer-content {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            gap: 20px;
         }
-        
+
         .footer-column {
             flex: 1;
             padding: 0 10px;
         }
-        
+
         .footer-title {
-            font-size: 16px;
+            font-size: 17px;
             margin-bottom: 15px;
             color: #e74c3c;
+            font-weight: bold;
         }
-        
+
         .footer-links li {
-            margin-bottom: 8px;
+            margin-bottom: 9px;
         }
-        
+
+        .footer-links a {
+            color: #bdc3c7;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
         .footer-links a:hover {
             color: #e74c3c;
         }
-        
+
         .copyright {
             text-align: center;
-            padding-top: 15px;
+            padding-top: 20px;
             border-top: 1px solid #2c3e50;
             font-size: 14px;
+            color: #8c9ba5;
         }
 
-        /* Мобильные стили */
+        /* модальные окна (qr и форма консультации) */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 15px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #fff;
+            color: #333;
+            width: 100%;
+            max-width: 420px;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            animation: modalFadeIn 0.25s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            font-size: 26px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: #888;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: #000;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #2c3e50;
+        }
+
+        .modal-desc {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .qr-wrapper {
+            background: #fff;
+            padding: 12px;
+            display: inline-block;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            margin-bottom: 15px;
+        }
+
+        .qr-wrapper img {
+            display: block;
+            width: 200px;
+            height: 200px;
+        }
+
+        .phone-display {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .copy-btn {
+            background: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            color: #333;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #e4e7eb;
+        }
+
+        /* адаптив под планшеты и мобилки */
         @media (max-width: 992px) {
+            html {
+                scroll-padding-top: 140px;
+            }
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
             .advantages-list {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
-            .contact-container {
-                flex-direction: column;
-            }
-            
-            .about-content {
+            .contact-container, .about-content {
                 flex-direction: column;
             }
         }
-        
+
         @media (max-width: 768px) {
-            .header-container {
-                flex-direction: row;
-                gap: 10px;
-                align-items: center;
+            html {
+                scroll-padding-top: 70px;
             }
-            
-            .logo {
-                font-size: 18px;
-            }
-            
-            .header-contacts {
-                gap: 10px;
-            }
-            
-            .contact-item {
-                font-size: 12px;
-            }
-            
             nav {
-                display: none;
+                display: none; /* скрываем меню на телефонах */
             }
-            
             .main-banner {
-                padding: 120px 0 60px;
+                padding: 130px 0 60px;
             }
-            
             .banner-title {
                 font-size: 26px;
             }
-            
-            .banner-text {
-                font-size: 16px;
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
-            
-            .section-title {
-                font-size: 24px;
-            }
-            
             .footer-content {
                 flex-direction: column;
-                gap: 20px;
-            }
-            
-            .footer-column {
                 text-align: center;
             }
         }
-        
+
         @media (max-width: 576px) {
-            .header-container {
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                padding-bottom: 5px;
-            }
-            
-            .logo {
-                margin-right: 15px;
-            }
-            
-            .services-grid {
+            .services-grid, .advantages-list {
                 grid-template-columns: 1fr;
             }
-            
-            .advantages-list {
-                grid-template-columns: 1fr;
-            }
-            
-            .main-banner {
-                padding: 100px 0 40px;
-            }
-            
             .banner-title {
                 font-size: 22px;
             }
-            
-            .banner-text {
-                font-size: 14px;
-            }
-            
-            .contact-item span {
-                display: none;
-            }
-            
-            .contact-item i {
-                font-size: 16px;
-            }
-        }
-        
-        @media (max-width: 400px) {
-            .logo {
-                font-size: 16px;
-            }
-            
             .header-contacts {
-                gap: 8px;
+                gap: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Шапка в одну строку -->
+
+    <!-- шапка -->
     <header>
-        <div class="container">
-            <div class="header-container">
-                <div class="logo">Beton-<span>pol</span></div>
+        <div class="header-top">
+            <div class="container header-container">
+                <div class="logo">
+                    <a href="#home">Beton-<span>pol</span></a>
+                </div>
                 <div class="header-contacts">
                     <div class="contact-item">
-		<a href="tel:+375291111404">+375 (29) 1111-404</a>
+                        <span>📞</span>
+                        <a href="tel:+375291111404" class="phone-link">+375 (29) 1111-404</a>
                     </div>
                     <div class="contact-item">
-                        <i class="icon">✉️</i>
-                        <span>beton-poll@mail.ru</span>
+                        <span>✉️</span>
+                        <a href="mailto:beton-poll@mail.ru">beton-poll@mail.ru</a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Навигационное меню (скрыто на мобильных) -->
-        <nav class="desktop-nav">
+
+        <!-- навигация -->
+        <nav>
             <ul class="nav-list container">
-                <li class="nav-item"><a href="#" class="nav-link">Главная</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">О компании</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Услуги</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Проекты</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Контакты</a></li>
+                <li class="nav-item"><a href="#home" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">О компании</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Услуги</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Проекты</a></li>
+                <li class="nav-item"><a href="#contacts" class="nav-link">Контакты</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Остальное содержимое без изменений -->
-    <!-- Главный баннер -->
-    <section class="main-banner">
+    <!-- главный баннер -->
+    <section class="main-banner" id="home">
         <div class="container">
             <h1 class="banner-title">Промышленные бетонные полы от Beton-pol</h1>
             <p class="banner-text">Мы предлагаем полный комплекс услуг по устройству бетонных полов промышленного и коммерческого назначения с гарантией качества</p>
-	    <a href="tel:+375291111404" class="btn">Заказать консультацию</a>
+            <button type="button" class="btn" id="hero-consult-btn">Заказать консультацию</button>
         </div>
     </section>
 
-    <!-- О компании -->
-    <section class="about">
+    <!-- блок о компании -->
+    <section class="about" id="about">
         <div class="container">
             <h2 class="section-title">О компании Beton-pol</h2>
             <div class="about-content">
@@ -516,210 +705,327 @@
                     <p>Мы используем только качественные материалы и современное оборудование, что позволяет нам гарантировать долговечность и надежность ваших полов.</p>
                 </div>
                 <div class="about-image">
+                    <img src="https://remstroyy.ru/upload/resize_cache/iblock/fcc/735_10000_0/fcc5087b02833835b34376958a6673d3.jpg" alt="О компании Beton-pol">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Услуги -->
-    <section class="services">
+    <!-- услуги -->
+    <section class="services" id="services">
         <div class="container">
             <h2 class="section-title">Наши услуги</h2>
             <div class="services-grid">
-                <div class="service-card">
+
+                <div class="service-card" id="service-beton">
                     <div class="service-image">
-                        <img src="https://images.prom.md/11573109_w640_h640_betonnye-promyshlennye-poly.jpg" alt="Устройство бетонных полов">
+                        <img src="https://images.prom.md/11573109_w640_h640_betonnye-promyshlennye-poly.jpg" alt="Бетонные полы">
                     </div>
                     <div class="service-content">
-                        <h3 class="service-title">Устройство бетонных полов</h3>
-                        <p>Полный цикл работ по устройству бетонных полов промышленного назначения с соблюдением всех технологических требований, начиная с подготовки оснавания до полировки готового пола.</p>
+                        <h3 class="service-title">Бетонные полы</h3>
+                        <p>Устройство армированных бетонных полов для складов, ангаров и цехов с высокими нагрузками.</p>
+                        <span class="card-btn open-consult-trigger">Заказать расчёт →</span>
                     </div>
                 </div>
-                <div class="service-card">
+
+                <div class="service-card" id="service-topping">
                     <div class="service-image">
-                        <img src="https://www.polimer-s-group.ru/assets/images/resources/5/4.jpg" alt="Устройство топпинг-полов">
+                        <img src="https://remstroyy.ru/upload/resize_cache/iblock/fcc/735_10000_0/fcc5087b02833835b34376958a6673d3.jpg" alt="Топпинг-полы">
                     </div>
                     <div class="service-content">
-                        <h3 class="service-title">Устройство топпинг-полов</h3>
-                        <p>Упрочнение поверхности бетонного пола сухими упрочняющими смесями (топпингами) для повышения износостойкости.</p>
+                        <h3 class="service-title">Топпинг-полы</h3>
+                        <p>Упрочнение верхнего слоя бетона кварцевым или корундовым топпингом против истирания и пыли.</p>
+                        <span class="card-btn open-consult-trigger">Заказать расчёт →</span>
                     </div>
                 </div>
-                <div class="service-card">
+
+                <div class="service-card" id="service-polymer">
                     <div class="service-image">
-                        <img src="https://www.npkreagent.ru/wp-content/uploads/2019/07/tehnologiya-ustroystva-polimernyh-nalivnyh-polov.jpg" alt="Полимерные покрытия">
+                        <img src="https://images.prom.md/11573109_w640_h640_betonnye-promyshlennye-poly.jpg" alt="Полимерные покрытия">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Полимерные покрытия</h3>
-                        <p>Нанесение полимерных покрытий на бетонные полы для придания дополнительных свойств: химической стойкости, беспыльности и др.</p>
+                        <p>Эпоксидные и полиуретановые наливные полы для фармацевтики, пищевых и химических зон.</p>
+                        <span class="card-btn open-consult-trigger">Заказать расчёт →</span>
                     </div>
                 </div>
-                <div class="service-card">
+
+                <div class="service-card" id="service-repair">
                     <div class="service-image">
-                        <img src="https://tehfloor.ru/wp-content/uploads/2018/01/2018-01-26_13-04-45.png" alt="Шлифовка бетонных полов">
+                        <img src="https://remstroyy.ru/upload/resize_cache/iblock/fcc/735_10000_0/fcc5087b02833835b34376958a6673d3.jpg" alt="Ремонт полов">
                     </div>
                     <div class="service-content">
-                        <h3 class="service-title">Шлифовка бетонных полов</h3>
-                        <p>Шлифовка и полировка бетонных полов для выравнивания поверхности, устранения дефектов и придания эстетичного вида.</p>
+                        <h3 class="service-title">Ремонт полов</h3>
+                        <p>Заделка сколов, трещин и деформационных швов, шлифовка, фрезерование и обеспыливание старого бетона.</p>
+                        <span class="card-btn open-consult-trigger">Заказать расчёт →</span>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://logopol.ru/wp-content/uploads/2017/01/remont-promyshlennyh-betonnyh-polov-1.jpg" alt="Ремонт бетонных полов">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Ремонт бетонных полов</h3>
-                        <p>Комплекс работ по ремонту и восстановлению поврежденных бетонных полов с использованием современных материалов.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://i.ytimg.com/vi/3JuyRovdz1o/maxresdefault.jpg" alt="Устройство деформационных швов">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Устройство деформационных швов</h3>
-                        <p>Профессиональное устройство и герметизация деформационных швов в бетонных полах для предотвращения трещинообразования.</p>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Проэээкты -->
-    <section class="services">
+    <!-- проекты -->
+    <section class="projects" id="projects">
         <div class="container">
-            <h2 class="section-title">Проекты</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://remstroyy.ru/upload/resize_cache/iblock/c03/735_10000_0/3tmehfpj67xwfiz4kpm39zr93daa1fhy.jpg" alt="Устройство бетонных полов">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Полы для склада</h3>
-                        <p>Коэффициенты линейного расширения высокопрочных наливных полов и бетонного основания практически идентичны, что снижает напряжение в зоне их соприкосновения и исключает образование трещин и отслоек покрытия.</p>
+            <h2 class="section-title">Выполненные проекты</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://images.prom.md/11573109_w640_h640_betonnye-promyshlennye-poly.jpg" class="project-img" alt="Складской комплекс">
+                    <div class="project-info">
+                        <h4>Логистический хаб, 4 800 м²</h4>
+                        <span>Топпинг корундовый, нагрузка до 8 т/м²</span>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://remstroyy.ru/upload/resize_cache/iblock/73a/735_10000_0/73aedc152dfceda7d42483e466647711.jpg" alt="Устройство топпинг-полов">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Полы для производственных помещений</h3>
-                        <p>Способность при толщине слоя 6 мм выдерживать постоянные нагрузки в 80 Па, возможность эксплуатации при температурах от - 25°С до +80°С, низкая воспламеняемость (при температуре 472°С), горючесть и задымленность.</p>
+                <div class="project-card">
+                    <img src="https://remstroyy.ru/upload/resize_cache/iblock/fcc/735_10000_0/fcc5087b02833835b34376958a6673d3.jpg" class="project-img" alt="Производственный цех">
+                    <div class="project-info">
+                        <h4>Производственный цех, 2 200 м²</h4>
+                        <span>Полимерное химстойкое покрытие</span>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://remstroyy.ru/upload/resize_cache/iblock/456/735_10000_0/4569262ce7c51c1288e235759bc00a8a.jpg" alt="Полимерные покрытия">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Полы для паркинга</h3>
-                        <p>Соответствуют правилам СП154.13130.2013 по пожаробезопасности покрытий, выдерживают колебания температур от -40 до + 60 градусов и обладают противоскользящими свойствами R9 – R10.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://remstroyy.ru/upload/resize_cache/iblock/c74/735_10000_0/c74857e38d3279537607bc82fae36c60.jpg" alt="Шлифовка бетонных полов">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Пол для автосервиса</h3>
-                        <p>Срок службы полов до 40 лет, прочность на растяжение – 25%, возможность эксплуатации при температуре от –35°С до +65°С. Масла, ГСМ, горячая вода не разрушают структуру покрытия.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://remstroyy.ru/upload/resize_cache/iblock/e5b/735_10000_0/e5b0f9b92dc1694d0c4c5b6d7d74ad96.jpg" alt="Ремонт бетонных полов">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Полы для пищевого производства</h3>
-                        <p>Полная механическая нагрузка от 2 часов до 3 суток, высокие термо-химстойкие свойства, в том числе, устойчивость к обработке паром, уровень пожарной безопасности Г1, В2, РП1.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://moscow-beton.ru/upload/iblock/c51/okrgdm1hu0mv1grbfq5avlcugd2ikzfl.jpg" alt="Устройство деформационных швов">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Полы для ангара</h3>
-                        <p>Ангары — это промышленные помещения, которые чаще всего используются для обслуживания и хранения габаритной техники или оборудуются под склады. </p>
+                <div class="project-card">
+                    <img src="https://images.prom.md/11573109_w640_h640_betonnye-promyshlennye-poly.jpg" class="project-img" alt="Паркинг">
+                    <div class="project-info">
+                        <h4>Подземный паркинг, 3 100 м²</h4>
+                        <span>Шлифованный бетон с обеспыливанием</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Преимущества -->
+    <!-- преимущества -->
     <section class="advantages">
         <div class="container">
-            <h2 class="section-title">Почему выбирают Beton-pol</h2>
+            <h2 class="section-title">Почему выбирают нас</h2>
             <div class="advantages-list">
                 <div class="advantage-item">
-                    <div class="advantage-icon">🏭</div>
-                    <h3>Опыт</h3>
-                    <p>Более 10 лет успешной работы на рынке</p>
+                    <div class="advantage-icon">🏆</div>
+                    <h3>Опыт 15+ лет</h3>
+                    <p>Более полутысячи сданных объектов по всей Беларуси.</p>
                 </div>
                 <div class="advantage-item">
-                    <div class="advantage-icon">👷</div>
-                    <h3>Профессионализм</h3>
-                    <p>Квалифицированные специалисты с профильным образованием</p>
+                    <div class="advantage-icon">⚙️</div>
+                    <h3>Своя техника</h3>
+                    <p>Современные затирочные машины и лазерные виброрейки.</p>
                 </div>
                 <div class="advantage-item">
-                    <div class="advantage-icon">🔧</div>
-                    <h3>Оборудование</h3>
-                    <p>Современное оборудование и инструменты</p>
+                    <div class="advantage-icon">📜</div>
+                    <h3>Гарантия до 5 лет</h3>
+                    <p>Работаем строго по СНиП и фиксируем всё в договоре.</p>
                 </div>
                 <div class="advantage-item">
-                    <div class="advantage-icon">💰</div>
-                    <h3>Гарантия</h3>
-                    <p>Гарантия на все виды работ 5 лет</p>
+                    <div class="advantage-icon">⏱️</div>
+                    <h3>Точные сроки</h3>
+                    <p>Сдаём работы без задержек и непредвиденных доплат.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Контакты -->
-    <section class="contact-section">
+    <!-- контакты и форма заявки -->
+    <section class="contact-section" id="contacts">
         <div class="container">
             <h2 class="section-title">Контакты</h2>
             <div class="contact-container">
                 <div class="contact-info">
-                    <p><strong>Адрес:</strong> г. Минск, ул. П. Мстиславца, 10</p>
-                    <p><strong>Телефон:</strong> +375 (29) 1111-404</p>
-                    <p><strong>Email:</strong> beton-poll@mail.ru</p>
-                    <p><strong>Режим работы:</strong> Пн-Вс: 9:00-21:00</p>
+                    <h3>Свяжитесь с нами</h3>
+                    <p>
+                        <span>📍</span>
+                        Беларусь, г. Минск
+                    </p>
+                    <p>
+                        <span>📞</span>
+                        <a href="tel:+375291111404" class="phone-link">+375 (29) 1111-404</a>
+                    </p>
+                    <p>
+                        <span>✉️</span>
+                        <a href="mailto:beton-poll@mail.ru">beton-poll@mail.ru</a>
+                    </p>
+                    <p>
+                        <span>⏰</span>
+                        Пн-Пт: 8:00 - 20:00, Сб: 9:00 - 17:00
+                    </p>
+                </div>
+
+                <div class="contact-form">
+                    <form id="main-contact-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" name="phone" placeholder="Ваш телефон (+375 ...)" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="comment" placeholder="Укажите площадь и назначение помещения"></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Отправить заявку</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Подвал -->
+    <!-- подвал сайта -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
                     <h3 class="footer-title">Beton-pol</h3>
-                    <p>Профессиональное устройство бетонных полов промышленного и коммерческого назначения в Минске и по всей Беларуси.</p>
+                    <p style="color: #bdc3c7; font-size: 14px;">Профессиональное устройство промышленных бетонных, топпинговых и полимерных полов под ключ.</p>
                 </div>
                 <div class="footer-column">
-                    <h3 class="footer-title">Услуги</h3>
+                    <h3 class="footer-title">Наши услуги</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Бетонные полы</a></li>
-                        <li><a href="#">Топпинг-полы</a></li>
-                        <li><a href="#">Полимерные покрытия</a></li>
-                        <li><a href="#">Ремонт полов</a></li>
+                        <li><a href="#service-beton">Бетонные полы</a></li>
+                        <li><a href="#service-topping">Топпинг-полы</a></li>
+                        <li><a href="#service-polymer">Полимерные покрытия</a></li>
+                        <li><a href="#service-repair">Ремонт полов</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3 class="footer-title">Контакты</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Адрес: г. Минск, ул. П. Мстиславца, 10</a></li>
-                        <li><a href="#">Телефон: +375 (29) 1111-404</a></li>
-                        <li><a href="#">Email: beton-poll@mail.ru</a></li>
+                        <li><a href="tel:+375291111404" class="phone-link">Тел: +375 (29) 1111-404</a></li>
+                        <li><a href="mailto:beton-poll@mail.ru">Email: beton-poll@mail.ru</a></li>
+                        <li style="color: #bdc3c7; font-size: 14px;">Минск, Беларусь</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Beton-pol. Все права защищены. UP: 22:10 / 31.05</p>
+                © 2026 Beton-pol.
             </div>
         </div>
     </footer>
+
+    <!-- модалка с qr кодом для звонка с компьютера -->
+    <div class="modal-overlay" id="qr-modal">
+        <div class="modal-box">
+            <button type="button" class="modal-close" aria-label="Закрыть">&times;</button>
+            <h3 class="modal-title">Звонок в Beton-pol</h3>
+            <p class="modal-desc">Наведите камеру смартфона на QR-код для быстрого набора номера:</p>
+            <div class="qr-wrapper">
+                <img id="qr-code-img" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=tel%3A%2B375291111404" alt="QR-код для звонка">
+            </div>
+            <a href="tel:+375291111404" class="phone-display">+375 (29) 1111-404</a>
+            <div>
+                <button type="button" class="copy-btn" id="copy-phone-btn">Скопировать номер</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- модалка формы заявки на консультацию -->
+    <div class="modal-overlay" id="consult-modal">
+        <div class="modal-box" style="text-align: left;">
+            <button type="button" class="modal-close" aria-label="Закрыть">&times;</button>
+            <h3 class="modal-title" style="text-align: center;">Заказать консультацию</h3>
+            <p class="modal-desc" style="text-align: center;">Оставьте телефон, перезвоним в течение 15 минут</p>
+            <form id="modal-consult-form">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-control" name="phone" placeholder="Телефон (+375 ...)" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="comment" placeholder="Площадь пола или вопрос"></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Заказать звонок</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- скрипты логики -->
+    <script>
+        // проверяем, зашли с компа или с мобильного
+        function checkIsDesktop() {
+            const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            return !isMobileDevice && window.innerWidth > 768;
+        }
+
+        // элементы модалки qr
+        const qrModal = document.getElementById('qr-modal');
+        const consultModal = document.getElementById('consult-modal');
+        const phoneLinks = document.querySelectorAll('.phone-link');
+        const heroConsultBtn = document.getElementById('hero-consult-btn');
+        const consultTriggers = document.querySelectorAll('.open-consult-trigger');
+
+        // перехватываем клик по телефону на компе и показываем qr
+        phoneLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (checkIsDesktop()) {
+                    e.preventDefault();
+                    qrModal.classList.add('active');
+                }
+            });
+        });
+
+        // копирование номера в буфер
+        const copyBtn = document.getElementById('copy-phone-btn');
+        if (copyBtn) {
+            copyBtn.addEventListener('click', function() {
+                navigator.clipboard.writeText('+375291111404').then(() => {
+                    const oldText = this.innerText;
+                    this.innerText = 'Номер скопирован!';
+                    setTimeout(() => {
+                        this.innerText = oldText;
+                    }, 2000);
+                });
+            });
+        }
+
+        // открываем окно заявки при клике на консультацию
+        if (heroConsultBtn) {
+            heroConsultBtn.addEventListener('click', () => {
+                consultModal.classList.add('active');
+            });
+        }
+
+        consultTriggers.forEach(btn => {
+            btn.addEventListener('click', () => {
+                consultModal.classList.add('active');
+            });
+        });
+
+        // закрытие окон по крестику и по клику на фон
+        document.querySelectorAll('.modal-close').forEach(closeBtn => {
+            closeBtn.addEventListener('click', function() {
+                this.closest('.modal-overlay').classList.remove('active');
+            });
+        });
+
+        [qrModal, consultModal].forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                }
+            });
+        });
+
+        // закрытие по esc
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                qrModal.classList.remove('active');
+                consultModal.classList.remove('active');
+            }
+        });
+
+        // обработка отправки форм заявки
+        function handleFormSubmit(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
+                this.reset();
+                consultModal.classList.remove('active');
+            });
+        }
+
+        const mainForm = document.getElementById('main-contact-form');
+        const modalForm = document.getElementById('modal-consult-form');
+
+        if (mainForm) handleFormSubmit(mainForm);
+        if (modalForm) handleFormSubmit(modalForm);
+    </script>
 </body>
 </html>
