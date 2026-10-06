@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beton-pol - Производство и монтаж бетонных полов</title>
     <style>
-        /* Общие стили */
+        /* сброс и базовые стили */
         * {
             margin: 0;
             padding: 0;
@@ -15,6 +15,11 @@
         
         html {
             scroll-behavior: smooth;
+        }
+
+        /* отступ под фиксированную шапку при переходе по якорям */
+        section, .service-card {
+            scroll-margin-top: 110px;
         }
 
         body {
@@ -38,7 +43,7 @@
             padding: 0 15px;
         }
         
-        /* Шапка */
+        /* шапка */
         header {
             background-color: #fff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -88,7 +93,7 @@
             color: #e74c3c;
         }
         
-        /* Навигация */
+        /* навигация */
         nav {
             background-color: #2c3e50;
             margin-top: 10px;
@@ -115,7 +120,7 @@
             background-color: #e74c3c;
         }
         
-        /* Главный баннер */
+        /* главный баннер */
         .main-banner {
             background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://remstroyy.ru/upload/resize_cache/iblock/fcc/735_10000_0/fcc5087b02833835b34376958a6673d3.jpg');
             background-size: cover;
@@ -152,7 +157,7 @@
             background-color: #c0392b;
         }
         
-        /* О компании */
+        /* о компании */
         .about {
             padding: 70px 0;
         }
@@ -190,7 +195,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
-        /* Услуги и Проекты */
+        /* услуги и проекты */
         .services {
             padding: 70px 0;
             background-color: #f9f9f9;
@@ -255,7 +260,7 @@
             line-height: 1.5;
         }
         
-        /* Преимущества */
+        /* преимущества */
         .advantages {
             padding: 70px 0;
             background-color: #f9f9f9;
@@ -302,7 +307,7 @@
             color: #fff;
         }
         
-        /* Контакты */
+        /* контакты */
         .contact-section {
             padding: 60px 0;
             background-color: #2c3e50;
@@ -337,7 +342,7 @@
             margin-right: 5px;
         }
         
-        /* Подвал */
+        /* подвал */
         footer {
             background-color: #1a252f;
             color: #fff;
@@ -388,7 +393,102 @@
             color: #7f8c8d;
         }
 
-        /* Мобильные стили */
+        /* всплывающее окно с qr-кодом */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 15px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-window {
+            background: #fff;
+            padding: 30px 25px;
+            border-radius: 8px;
+            max-width: 360px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            animation: modalFadeIn 0.2s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            background: none;
+            border: none;
+            font-size: 26px;
+            line-height: 1;
+            color: #888;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .modal-close:hover {
+            color: #e74c3c;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .modal-text {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .modal-qr-box {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            padding: 6px;
+        }
+
+        .modal-qr-box img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .modal-phone {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .modal-phone:hover {
+            color: #e74c3c;
+        }
+
+        /* мобильные стили */
         @media (max-width: 992px) {
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -513,8 +613,8 @@
         }
     </style>
 </head>
-<body>
-    <!-- Шапка в одну строку -->
+<body id="top">
+    <!-- шапка -->
     <header>
         <div class="container">
             <div class="header-container">
@@ -530,10 +630,10 @@
                 </div>
             </div>
         </div>
-        <!-- Навигационное меню (скрыто на мобильных) -->
+        <!-- основное меню -->
         <nav class="desktop-nav">
             <ul class="nav-list container">
-                <li class="nav-item"><a href="#" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="#top" class="nav-link">Главная</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">О компании</a></li>
                 <li class="nav-item"><a href="#services" class="nav-link">Услуги</a></li>
                 <li class="nav-item"><a href="#projects" class="nav-link">Проекты</a></li>
@@ -542,7 +642,7 @@
         </nav>
     </header>
 
-    <!-- Главный баннер -->
+    <!-- главный баннер -->
     <section class="main-banner">
         <div class="container">
             <h1 class="banner-title">Промышленные бетонные полы от Beton-pol</h1>
@@ -551,7 +651,7 @@
         </div>
     </section>
 
-    <!-- О компании -->
+    <!-- о компании -->
     <section class="about" id="about">
         <div class="container">
             <h2 class="section-title">О компании Beton-pol</h2>
@@ -568,12 +668,12 @@
         </div>
     </section>
 
-    <!-- Услуги -->
+    <!-- услуги -->
     <section class="services" id="services">
         <div class="container">
             <h2 class="section-title">Наши услуги</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" id="service-beton">
                     <div class="service-image">
                         <img src="https://images.prom.md/11573109_w640_h640_betonnye-promyshlennye-poly.jpg" alt="Устройство бетонных полов">
                     </div>
@@ -582,7 +682,7 @@
                         <p>Полный цикл работ по устройству бетонных полов промышленного назначения с соблюдением всех технологических требований, начиная с подготовки основания до полировки готового пола.</p>
                     </div>
                 </div>
-                <div class="service-card">
+                <div class="service-card" id="service-topping">
                     <div class="service-image">
                         <img src="https://www.polimer-s-group.ru/assets/images/resources/5/4.jpg" alt="Устройство топпинг-полов">
                     </div>
@@ -591,7 +691,7 @@
                         <p>Упрочнение поверхности бетонного пола сухими упрочняющими смесями (топпингами) для повышения износостойкости.</p>
                     </div>
                 </div>
-                <div class="service-card">
+                <div class="service-card" id="service-polymer">
                     <div class="service-image">
                         <img src="https://www.npkreagent.ru/wp-content/uploads/2019/07/tehnologiya-ustroystva-polimernyh-nalivnyh-polov.jpg" alt="Полимерные покрытия">
                     </div>
@@ -600,7 +700,7 @@
                         <p>Нанесение полимерных покрытий на бетонные полы для придания дополнительных свойств: химической стойкости, беспыльности и др.</p>
                     </div>
                 </div>
-                <div class="service-card">
+                <div class="service-card" id="service-shlifovka">
                     <div class="service-image">
                         <img src="https://tehfloor.ru/wp-content/uploads/2018/01/2018-01-26_13-04-45.png" alt="Шлифовка бетонных полов">
                     </div>
@@ -609,7 +709,7 @@
                         <p>Шлифовка и полировка бетонных полов для выравнивания поверхности, устранения дефектов и придания эстетичного вида.</p>
                     </div>
                 </div>
-                <div class="service-card">
+                <div class="service-card" id="service-remont">
                     <div class="service-image">
                         <img src="https://logopol.ru/wp-content/uploads/2017/01/remont-promyshlennyh-betonnyh-polov-1.jpg" alt="Ремонт бетонных полов">
                     </div>
@@ -618,7 +718,7 @@
                         <p>Комплекс работ по ремонту и восстановлению поврежденных бетонных полов с использованием современных материалов.</p>
                     </div>
                 </div>
-                <div class="service-card">
+                <div class="service-card" id="service-shvy">
                     <div class="service-image">
                         <img src="https://i.ytimg.com/vi/3JuyRovdz1o/maxresdefault.jpg" alt="Устройство деформационных швов">
                     </div>
@@ -631,7 +731,7 @@
         </div>
     </section>
 
-    <!-- Проекты -->
+    <!-- проекты -->
     <section class="services projects-section" id="projects">
         <div class="container">
             <h2 class="section-title">Проекты</h2>
@@ -694,7 +794,7 @@
         </div>
     </section>
 
-    <!-- Преимущества -->
+    <!-- преимущества -->
     <section class="advantages" id="advantages">
         <div class="container">
             <h2 class="section-title">Почему выбирают Beton-pol</h2>
@@ -723,7 +823,7 @@
         </div>
     </section>
 
-    <!-- Контакты -->
+    <!-- контакты -->
     <section class="contact-section" id="contacts">
         <div class="container">
             <h2 class="section-title">Контакты</h2>
@@ -738,7 +838,7 @@
         </div>
     </section>
 
-    <!-- Подвал -->
+    <!-- подвал -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -749,10 +849,10 @@
                 <div class="footer-column">
                     <h3 class="footer-title">Услуги</h3>
                     <ul class="footer-links">
-                        <li><a href="#services">Бетонные полы</a></li>
-                        <li><a href="#services">Топпинг-полы</a></li>
-                        <li><a href="#services">Полимерные покрытия</a></li>
-                        <li><a href="#services">Ремонт полов</a></li>
+                        <li><a href="#service-beton">Бетонные полы</a></li>
+                        <li><a href="#service-topping">Топпинг-полы</a></li>
+                        <li><a href="#service-polymer">Полимерные покрытия</a></li>
+                        <li><a href="#service-remont">Ремонт полов</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -765,9 +865,68 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Beton-pol. Все права защищены.</p>
+                <p>&copy; 2026 Beton-pol.</p>
             </div>
         </div>
     </footer>
+
+    <!-- модалка с qr-кодом для пк -->
+    <div class="modal-overlay" id="qrModal">
+        <div class="modal-window">
+            <button class="modal-close" id="modalClose" aria-label="Закрыть">&times;</button>
+            <h3 class="modal-title">Звонок в Beton-pol</h3>
+            <p class="modal-text">Наведите камеру телефона на QR-код, чтобы набрать номер:</p>
+            <div class="modal-qr-box">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&amp;data=tel:+375291111404" alt="QR-код для звонка">
+            </div>
+            <a href="tel:+375291111404" class="modal-phone">+375 (29) 1111-404</a>
+        </div>
+    </div>
+
+    <script>
+        // проверяем, зашли с мобилки или с компа
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                   (window.innerWidth <= 768 && ('ontouchstart' in window));
+        }
+
+        const modal = document.getElementById('qrModal');
+        const closeBtn = document.getElementById('modalClose');
+
+        function openModal() {
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        // перехватываем клик по всем телефонам на компе
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (!isMobileDevice()) {
+                    e.preventDefault();
+                    openModal();
+                }
+            });
+        });
+
+        // закрытие по крестику
+        closeBtn.addEventListener('click', closeModal);
+
+        // закрытие по клику в темную область
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // закрытие по кнопке escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
