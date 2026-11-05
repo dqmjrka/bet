@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&gclid&fbclid /
+
+User-agent: Yandex
+Allow: /
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&gclid&fbclid /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://www.beton-pol.by/sitemap.xml
